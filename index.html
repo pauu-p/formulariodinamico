@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="assets/bootstrap-5.3.6/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <script src="assets/bootstrap-5.3.6/dist/js/bootstrap.bundle.js"></script>
+    <script src="assets/js/script.js"></script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Completa el formulario </h1>
+    </header>
+    <main>
+       
+        <form action="" id="miformulario">
+            <div class="nombres">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu Nombre">
+
+                </div>
+            </div>
+
+            <div class="numeros">
+                <div class="mb-3">
+                <label for="numero" class="form-label">Selecciona un número</label>
+                <input type="number" class="form-control" id="numero" name="numero" placeholder="1234">
+                </div>
+            </div>
+
+            <div class="check">
+                <p>Selecciona tu mascota</p>
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="mascotas" value="Perro" id="perro">
+                <label class="form-check-label" for="perro">Perro</label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="mascotas" value="Gato" id="gato">
+                <label class="form-check-label" for="gato">Gato</label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="mascotas" value="Conejo" id="conejo">
+                <label class="form-check-label" for="conejo">Conejo</label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="mascotas" value="Hamster" id="hamster">
+                <label class="form-check-label" for="hamster">Hámster</label>
+                </div>
+            </div>
+
+            <div class="colores">
+                <label for="exampleColorInput" class="form-label">Color picker</label>
+                <input type="color" class="form-control form-control-color" id="exampleColorInput" name="color" value="#563d7c" title="Choose your color">
+            </div>
+
+            <div class="col-12">
+                <button class="btn btn-warning" type="submit">Enviar</button>
+            </div>
+        </form>
+
+    
+    </main>
+    <footer>
+
+    </footer>
+</div>
+<script>
+    document.getElementById('miformulario').addEventListener('submit', function(event){
+    event.preventDefault()
+
+    let formdata= new FormData(this)
+    let data = {};
+
+    formdata.forEach((valor, clave)=>{
+        data[clave] = valor;
+    })
+
+    console.log(data)
+} )
+</script>
+</body>
+</html>
