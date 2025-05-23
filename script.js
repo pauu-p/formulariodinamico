@@ -30,9 +30,9 @@ document.getElementById('miformulario').addEventListener('submit', function(even
     //FOTOS MASCOTA 
     const imagenesPorMascota = {
         Perro: [
-            './img/perro1.jpg',
-            './img/perro2.jpg',
-            './img/perro3.jpg'
+            'assets/img/perro1.jpg',
+            'assets/img/perro2.jpg',
+            'assets/img/perro3.jpg'
         ],
         Gato: [
             'https://example.com/gato1.jpg',
