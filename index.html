@@ -11,12 +11,10 @@
 </head>
 <body>
 <div class="container">
-    <header>
-        <h1>Completa el formulario </h1>
-    </header>
+    
     <main>
         <section class="contenido-dinamico">
-
+            <h1>Mi mascota y yo</h1>
             <div class="alert alert-warning alert-dismissible fade " role="alert" id="miAlerta">
             <strong id="contenidoMensaje"></strong> Hemos recibido tu respuesta correctamente
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -34,33 +32,32 @@
                         </button>
             </div>
 
-            <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+            <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Sobre mi mascota</button>
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Más por descubrir</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <div class="pop">
-                    <a href="#" class="btn btn-success" id="miPopover" data-bs-toggle="popover" data-bs-title="Título de este componente" data-bs-content="holi">Abre un popover</a>
-                    <a class="btn btn-primary" id="miPopover2" data-bs-toggle="popover" data-bs-title="meh">Otro popover</a>
+                   <a href="#" class="btn btn-success" id="miPopover" data-bs-html="true" data-bs-toggle="popover" title="Título">Dato no tan curioso</a>
                 </div>
                 <div class="toasts">
-                    <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+                    <button type="button" class="btn btn-primary" id="liveToastBtn"></button>
 
                     <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                        <img src="..." class="rounded me-2" alt="...">
-                        <strong class="me-auto">Bootstrap</strong>
-                        <small>11 mins ago</small>
-                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header">
+                                <img src="..." class="rounded me-2" alt="..." id="toastImg">
+                                <strong class="me-auto" id="toastTitle"></strong>
+                                <small id="toastTime">Ahora</small>
+                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                            </div>
+                            <div class="toast-body" id="toastBody">
+                            </div>
                         </div>
-                        <div class="toast-body">
-                        Hello, world! This is a toast message.
                         </div>
-                    </div>
-                    </div>
+
                 </div>
              
             </div>
@@ -69,11 +66,20 @@
             
         </section>
        <section class="formulario">
+        <h1 id="titulo">Completa el formulario </h1>
         <form action="" id="miformulario">
-            <div class="nombres">
+            <div class="nombre">
                 <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
+                    <label for="nombre" class="form-label">Tu nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu Nombre">
+
+                </div>
+            </div>
+
+             <div class="nombre-mascota">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombra a tu mascota</label>
+                    <input type="text" class="form-control" id="nombreMascota" name="nombre" placeholder="Nombre Mascota">
 
                 </div>
             </div>
