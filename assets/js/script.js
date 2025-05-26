@@ -26,12 +26,48 @@ document.getElementById('miformulario').addEventListener('submit', function(even
     }, 5000);
    
 //CARRUSEL
+
+    //FOTOS MASCOTA 
+    const imagenesPorMascota = {
+        Perro: [
+            'assets/img/perro1.jpg',
+            'assets/img/perro2.jpg',
+            'assets/img/perro3.jpg'
+        ],
+        Gato: [
+            'assets/img/gato1.jpg',
+            'assets/img/gato2.jpg',
+            'assets/img/gato3.jpg'
+        ],
+        Conejo: [
+            'assets/img/conejo1.jpg',
+            'assets/img/conejo2.jpg',
+            'assets/img/conejo3.jpg'
+        ],
+        Hamster: [
+            'assets/img/hamster1.jpg',
+            'assets/img/hamster2.jpg',
+            'assets/img/hamster3.jpg'
+        ]
+    };
+
+
+    const carruselContent = document.getElementById('carruselContent');
+    carruselContent.innerHTML = '';
     const micarrusel = document.querySelector('#carrusel')
 
+    imagenesPorMascota[mascota]?.forEach((img, index) => {
+       
+        const item = document.createElement('div');
+        item.className = 'carousel-item' + (index === 0 ? ' active' : '');
+        item.innerHTML = `<img src="${img}" class="d-block w-100" alt="${mascota}">`;
+        carruselContent.appendChild(item);
+    });
+
     let carousel = new bootstrap.Carousel(micarrusel, {
-    interval: 2000,
-    ride: true,
-    pause: 'hover'
+        interval: 2000,
+        ride: true,
+        pause: 'hover'
     })
 
 //OFCANVAS 
